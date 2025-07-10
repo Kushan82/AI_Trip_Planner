@@ -2,7 +2,6 @@ import os
 from typing import Any, Optional, Literal
 from dotenv import load_dotenv
 from pydantic import BaseModel, Field
-from langchain_huggingface import HuggingFaceEmbeddings
 from utils.config_loader import load_config
 from langchain_groq import ChatGroq
 
