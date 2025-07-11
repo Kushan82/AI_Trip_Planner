@@ -8,12 +8,12 @@ from langchain_groq import ChatGroq
 class ConfigLoader:
     def __init__(self):
         print(f"Loading configuration ...")
-        self.config = self.load_config()
+        self.config = load_config()
 
     def __getitem__(self,key):
-        return self.config(key)
+        return self.config[key]
 
-class ModelLoader:
+class ModelLoader(BaseModel):
     model_provider: Literal["groq"]="groq"
     config: Optional[ConfigLoader]= Field(default = None, exclude=True)
 
